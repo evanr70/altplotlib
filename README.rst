@@ -3,17 +3,32 @@ altplotlib
 ==========
 
 
-Add a short description here!
+altplotlib provides matplotlib-style object oriented bindings to altair.
 
 
 Description
 ===========
 
-A longer description of your project goes here...
+Create high quality altair plots using more familiar calls.
 
+.. code-block:: python
+  
+  import altplotlib
+  import numpy as np
 
-Note
-====
+  rng = np.random.default_rng(seed=42)
 
-This project has been set up using PyScaffold 3.2.3. For details and usage
-information on PyScaffold see https://pyscaffold.org/.
+  n_points, n_series = 100, 5
+  multiple = rng.normal(size=(n_points, n_series)).cumsum(axis=0)
+  x = np.linspace(0, 14, n_points)
+
+  axis = altplotlib.AltairAxis()
+
+  axis.plot(multiple[:, :3])
+  axis.set_title("Hello, world!")
+  axis.set_xlabel("This is my x-axis")
+  axis.set_ylabel("This is my y-axis")
+  axis.plot(multiple[:, 3], c="xkcd:rust")
+  axis.plot(multiple[:, 4], c="tab:cyan")
+
+.. image:: ./gallery/simple_example.png
