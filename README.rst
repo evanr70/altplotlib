@@ -31,4 +31,4 @@ Create high quality altair plots using more familiar calls.
   axis.plot(multiple[:, 3], c="xkcd:rust")
   axis.plot(multiple[:, 4], c="tab:cyan")
 
-.. image:: ./gallery/simple_example.png
+.. image:: https://raw.githubusercontent.com/evanr70/altplotlib/master/gallery/simple_example.png
